@@ -15,6 +15,7 @@
     "react-feather": "^2.0.10"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^5.16.5",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
