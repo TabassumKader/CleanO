@@ -1,0 +1,54 @@
+.intro {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--sds-size-space-600);
+  flex-wrap: wrap;
+}
+
+.introText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--sds-size-space-200);
+  min-width: 320px;
+}
+
+.search {
+  width: 360px;
+  max-width: 100%;
+}
+
+.wardRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+  flex-wrap: wrap;
+}
+
+.periodForm {
+  margin-left: auto;
+  width: 180px;
+}
+
+.recordHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+  flex-wrap: wrap;
+}
+
+.recordHeader > h3 {
+  flex: 1 1 200px;
+}
+
+.provider {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+}
+
+.notFound {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sds-size-space-200);
+}

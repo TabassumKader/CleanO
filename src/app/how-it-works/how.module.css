@@ -1,0 +1,34 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--sds-size-space-400);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+  padding: var(--sds-size-space-200);
+  border-radius: var(--sds-size-radius-200);
+}
+
+.item:hover {
+  background: var(--sds-color-background-default-secondary);
+}
+
+.id {
+  width: 32px;
+  flex-shrink: 0;
+}
+
+.chevron {
+  margin-left: auto;
+  flex-shrink: 0;
+  color: var(--sds-color-icon-default-secondary);
+}

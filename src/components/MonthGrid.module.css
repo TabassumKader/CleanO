@@ -1,0 +1,18 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sds-size-space-200);
+  list-style: none;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sds-size-space-100);
+  width: 32px;
+}
+
+.dim {
+  opacity: 0.35;
+}

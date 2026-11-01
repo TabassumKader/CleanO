@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Logo mark" clip-path="url(#clip0_0_91)">
+<path id="Vector" d="M48 0H16C7.16344 0 0 7.16344 0 16V48C0 56.8366 7.16344 64 16 64H48C56.8366 64 64 56.8366 64 48V16C64 7.16344 56.8366 0 48 0Z" fill="#14AE5C"/>
+<path id="Vector_2" d="M32 13C32 13 19 28 19 37C19 44.18 24.82 50 32 50C39.18 50 45 44.18 45 37C45 28 32 13 32 13Z" fill="white"/>
+<path id="Vector_3" d="M26 37.2L30.4 41.6L38.8 32.8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke="#14AE5C"/>
+</g>
+<defs>
+<clipPath id="clip0_0_91">
+<rect width="64" height="64" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,68 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-400);
+}
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-400);
+  border: 0;
+  min-width: 0;
+}
+
+.pair {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sds-size-space-400);
+}
+
+.photo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-400);
+}
+
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sds-size-space-200);
+  width: 100%;
+  height: 112px;
+  padding: var(--sds-size-space-400);
+  border: var(--sds-size-stroke-border) dashed var(--sds-color-border-default-secondary);
+  border-radius: var(--sds-size-radius-200);
+  background: var(--sds-color-background-default-default);
+  color: var(--sds-color-icon-default-secondary);
+  cursor: pointer;
+  text-align: center;
+}
+
+.dropzone:hover,
+.dropzoneActive {
+  background: var(--sds-color-background-default-secondary);
+}
+
+.photoChosen {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+  padding: var(--sds-size-space-300) var(--sds-size-space-400);
+  border: var(--sds-size-stroke-border) solid var(--sds-color-border-default-default);
+  border-radius: var(--sds-size-radius-200);
+}
+
+.photoChosen > :first-child {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 720px) {
+  .pair {
+    flex-direction: column;
+  }
+}

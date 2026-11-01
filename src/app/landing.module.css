@@ -1,0 +1,952 @@
+/*
+ * Landing page. Direction: civic utility. White page, a 12-column grid, hairline
+ * dividers, real product screenshots, plain headings. The design-system radius
+ * (8px) and near-black buttons match the app; green is kept for small labels.
+ *
+ * Scale: spacing 4/8/12/16/24/32/48/64/96/128 · type 15/17/20/24/40/56.
+ */
+
+.page {
+  --text: #171717;
+  --text-secondary: #565656;
+  --hairline: #e4e4e0;
+  --panel: #f4f4f2;
+  --accent: #0b7a3e; /* darker brand green: passes AA for text on white */
+  --button: #1e1e1e;
+  --max: 1200px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --heading-font: var(--font-heading), var(--bangla-font-family), sans-serif;
+  --body-font: var(--font-body), var(--sds-typography-body-font-family);
+
+  font-family: var(--body-font);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text);
+  background: #fff;
+  interpolate-size: allow-keywords;
+}
+
+.page :focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+.container {
+  width: 100%;
+  max-width: calc(var(--max) + 2 * var(--page-gutter));
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+}
+
+/* Type */
+
+.h1 {
+  font-family: var(--heading-font);
+  font-size: clamp(40px, 4.6vw, 56px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.h1Bangla {
+  display: block;
+  margin-top: 16px;
+  font-size: clamp(22px, 2vw, 26px);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0;
+  color: var(--text-secondary);
+}
+
+.h2 {
+  font-family: var(--heading-font);
+  font-size: clamp(30px, 3vw, 40px);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.005em;
+}
+
+.h3 {
+  font-family: var(--heading-font);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.label {
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.sectionText {
+  margin-top: 16px;
+  max-width: 34em;
+  color: var(--text-secondary);
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.textLink:hover {
+  color: var(--accent);
+}
+
+.textLink svg {
+  transition: transform 200ms var(--ease);
+}
+
+.textLink:hover svg {
+  transform: translateX(4px);
+}
+
+/* Buttons */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 20px;
+  border: 1px solid var(--button);
+  border-radius: 8px;
+  background: var(--button);
+  color: #fff;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    transform 150ms ease;
+}
+
+.button:hover {
+  background: #000;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.buttonSmall {
+  height: 40px;
+  padding: 0 16px;
+  font-size: 15px;
+}
+
+.buttonSecondary {
+  background: #fff;
+  color: var(--text);
+  border-color: #c9c9c4;
+}
+
+.buttonSecondary:hover {
+  background: var(--panel);
+}
+
+/* Header */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  border-bottom: 1px solid var(--hairline);
+  background: rgb(255 255 255 / 0.88);
+  backdrop-filter: saturate(1.4) blur(10px);
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: calc(var(--max) + 2 * var(--page-gutter));
+  height: 72px;
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--heading-font);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.brandText span {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  font-size: 15px;
+}
+
+.nav a,
+.headerLink {
+  color: var(--text-secondary);
+}
+
+.nav a:hover,
+.headerLink:hover {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+  font-size: 15px;
+}
+
+/* Hero */
+
+.hero {
+  padding-top: 80px;
+}
+
+.heroText {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
+  row-gap: 32px;
+  align-items: end;
+}
+
+.heroText .h1 {
+  grid-column: 1 / span 7;
+}
+
+.heroAside {
+  grid-column: 8 / span 5;
+}
+
+.lede {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.status {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* The screenshot overlaps into the grey band below it. */
+.heroShot {
+  position: relative;
+  z-index: 1;
+  margin: 64px 0 -160px;
+  overflow: hidden;
+  border: 1px solid #d9d9d4;
+  border-radius: 12px;
+  background: #f5f5f5;
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 0.04),
+    0 24px 48px -24px rgb(0 0 0 / 0.18);
+}
+
+.heroShot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Facts under the screenshot */
+
+.facts {
+  padding: 224px 0 96px;
+  background: var(--panel);
+}
+
+.factGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.factGrid > div {
+  position: relative;
+  padding-top: 22px;
+}
+
+.factGrid > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--text);
+  transform-origin: left;
+}
+
+.factGrid dt {
+  font-family: var(--heading-font);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.factGrid dd {
+  margin-top: 8px;
+  color: var(--text-secondary);
+}
+
+/* Features */
+
+.features {
+  padding: 128px 0 32px;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
+  row-gap: 40px;
+  align-items: center;
+  padding-bottom: 128px;
+}
+
+.featureText {
+  grid-column: 1 / span 5;
+}
+
+.panel {
+  grid-column: 7 / span 6;
+  overflow: hidden;
+  padding: 48px 0 0 48px;
+  border-radius: 12px;
+  background: var(--panel);
+}
+
+/* Wide screenshots run off the panel's right and bottom edges. */
+.panel img {
+  display: block;
+  transition:
+    transform 900ms var(--ease) var(--img-delay, 0ms),
+    translate 500ms var(--ease);
+  width: var(--bleed, 135%);
+  max-width: none;
+  height: auto;
+  border: 1px solid #d9d9d4;
+  border-bottom: 0;
+  border-right: 0;
+  border-radius: 8px 0 0 0;
+  box-shadow: 0 16px 40px -20px rgb(0 0 0 / 0.25);
+}
+
+.panelCentered {
+  display: flex;
+  justify-content: center;
+  padding: 48px;
+}
+
+.panelCentered img {
+  width: 100%;
+  max-width: 400px;
+  border: 0;
+  border-radius: 8px;
+  box-shadow:
+    0 0 0 1px rgb(0 0 0 / 0.06),
+    0 16px 40px -20px rgb(0 0 0 / 0.3);
+}
+
+.featureReverse .featureText {
+  grid-column: 8 / span 5;
+  grid-row: 1;
+}
+
+.featureReverse .panel {
+  grid-column: 1 / span 6;
+  grid-row: 1;
+}
+
+.points {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+  list-style: none;
+}
+
+.points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.points svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+  color: var(--accent);
+}
+
+/* Process */
+
+.process {
+  padding: 112px 0;
+  border-top: 1px solid var(--hairline);
+  background: var(--panel);
+}
+
+.sectionIntro {
+  max-width: 640px;
+}
+
+.sectionIntro p {
+  margin-top: 16px;
+  color: var(--text-secondary);
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 56px;
+  list-style: none;
+}
+
+.stage {
+  position: relative;
+  padding-right: 32px;
+}
+
+/* One continuous rule through the markers */
+.stage::before {
+  content: "";
+  transform-origin: left;
+  position: absolute;
+  top: 37px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #c9c9c4;
+}
+
+.stageLast::before {
+  right: auto;
+  width: 12px;
+}
+
+.stageTime {
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+}
+
+.stageMarker {
+  position: relative;
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 10px 0 20px;
+  border-radius: 50%;
+  background: var(--text);
+}
+
+.stageLast .stageMarker {
+  background: var(--accent);
+}
+
+.stageText {
+  margin-top: 8px;
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.process .textLink {
+  margin-top: 48px;
+}
+
+/* Ward lookup */
+
+.lookup {
+  padding: 112px 0;
+}
+
+.lookupGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
+  row-gap: 32px;
+  align-items: end;
+}
+
+.lookupGrid > :first-child {
+  grid-column: 1 / span 5;
+}
+
+.lookupGrid > :last-child {
+  grid-column: 7 / span 6;
+}
+
+.searchLabel {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.searchRow {
+  display: flex;
+  gap: 12px;
+}
+
+.searchRow input {
+  flex: 1;
+  min-width: 0;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #a9a9a3;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 16px;
+  color: var(--text);
+  background: #fff;
+}
+
+.searchRow input:focus {
+  outline: 2px solid var(--text);
+  outline-offset: 1px;
+}
+
+.sampleWards {
+  margin-top: 16px;
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.sampleWards a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* FAQ */
+
+.faq {
+  padding: 112px 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
+  row-gap: 32px;
+}
+
+.faqGrid > :first-child {
+  grid-column: 1 / span 4;
+}
+
+.faqList {
+  grid-column: 6 / span 7;
+  border-top: 1px solid var(--hairline);
+}
+
+.question {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.question summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 0;
+  font-size: 18px;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+.question summary::-webkit-details-marker {
+  display: none;
+}
+
+.question summary::after {
+  content: "+";
+  flex-shrink: 0;
+  width: 20px;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.1;
+  text-align: center;
+  color: var(--text-secondary);
+  transition: transform 250ms var(--ease);
+}
+
+/* The plus turns into a close mark */
+.question[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.question summary:hover {
+  color: var(--accent);
+}
+
+/* Smooth open/close where the browser supports animating <details> */
+.question::details-content {
+  height: 0;
+  overflow: clip;
+  transition:
+    height 300ms var(--ease),
+    content-visibility 300ms allow-discrete;
+}
+
+.question[open]::details-content {
+  height: auto;
+}
+
+.question p {
+  max-width: 36em;
+  padding-bottom: 24px;
+  color: var(--text-secondary);
+}
+
+/* Footer */
+
+.footer {
+  padding: 64px 0 80px;
+  border-top: 1px solid var(--hairline);
+  background: var(--panel);
+  font-size: 15px;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.4fr;
+  gap: 32px;
+}
+
+.footerGrid nav,
+.footerGrid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footerGrid a {
+  color: var(--text-secondary);
+}
+
+.footerGrid a:hover {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footerGrid > div:last-child p {
+  color: var(--text-secondary);
+}
+
+.footerBrand p {
+  max-width: 260px;
+  margin-top: 8px;
+  color: var(--text-secondary);
+}
+
+.footerHeading {
+  margin-bottom: 4px;
+  font-weight: 600;
+  color: var(--text) !important;
+}
+
+/* Motion
+ * One curve, short distances. The hero plays once on load. Below the fold,
+ * RevealRoot marks elements data-reveal-state="hidden" and then "shown" as they
+ * scroll in, so without JavaScript nothing is ever hidden. Reduced motion turns
+ * all of it off.
+ */
+
+/* Header lifts off the page once you scroll */
+@supports (animation-timeline: scroll()) {
+  .header {
+    animation: headerLift linear both;
+    animation-timeline: scroll();
+    animation-range: 0 160px;
+  }
+}
+
+@keyframes headerLift {
+  to {
+    box-shadow: 0 10px 30px -18px rgb(0 0 0 / 0.35);
+  }
+}
+
+/* Hero entrance */
+.heroText .h1,
+.h1Bangla,
+.lede,
+.actions,
+.status {
+  animation: enter 700ms var(--ease) both;
+}
+
+.h1Bangla {
+  animation-delay: 140ms;
+}
+
+.lede {
+  animation-delay: 200ms;
+}
+
+.actions {
+  animation-delay: 280ms;
+}
+
+.status {
+  animation-delay: 360ms;
+}
+
+.heroShot {
+  animation: enterShot 1000ms var(--ease) 380ms both;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@keyframes enterShot {
+  from {
+    opacity: 0;
+    transform: translateY(48px) scale(0.98);
+  }
+}
+
+/* Scroll reveals */
+.page [data-reveal-state="hidden"] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.page [data-reveal-state="shown"] {
+  transition:
+    opacity 700ms var(--ease) var(--delay, 0ms),
+    transform 700ms var(--ease) var(--delay, 0ms);
+}
+
+/* Fact rules draw from left to right */
+.factGrid > [data-reveal-state="hidden"]::before {
+  transform: scaleX(0);
+}
+
+.factGrid > [data-reveal-state="shown"]::before {
+  transition: transform 900ms var(--ease) calc(var(--delay, 0ms) + 150ms);
+}
+
+/* Screenshots slide in from the edge they bleed off */
+.panel[data-reveal-state="hidden"] img {
+  transform: translateX(56px);
+}
+
+.panelCentered[data-reveal-state="hidden"] img {
+  transform: translateY(24px);
+}
+
+.panel[data-reveal-state="shown"] {
+  --img-delay: 240ms;
+}
+
+.feature:hover .panel img {
+  translate: -6px -4px;
+}
+
+/* The complaint timeline draws stage by stage */
+.page .timeline[data-reveal-state="hidden"] {
+  opacity: 1;
+  transform: none;
+}
+
+.timeline[data-reveal-state="hidden"] .stage::before {
+  transform: scaleX(0);
+}
+
+.timeline[data-reveal-state="hidden"] .stageMarker {
+  transform: scale(0);
+}
+
+.timeline[data-reveal-state="hidden"] .stageTime,
+.timeline[data-reveal-state="hidden"] .h3,
+.timeline[data-reveal-state="hidden"] .stageText {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.timeline[data-reveal-state="shown"] .stage::before {
+  transition: transform 600ms var(--ease) calc(var(--i) * 260ms + 180ms);
+}
+
+.timeline[data-reveal-state="shown"] .stageMarker {
+  transition: transform 450ms cubic-bezier(0.3, 1.5, 0.5, 1) calc(var(--i) * 260ms);
+}
+
+.timeline[data-reveal-state="shown"] .stageTime,
+.timeline[data-reveal-state="shown"] .h3,
+.timeline[data-reveal-state="shown"] .stageText {
+  transition:
+    opacity 600ms var(--ease) calc(var(--i) * 260ms + 120ms),
+    transform 600ms var(--ease) calc(var(--i) * 260ms + 120ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page *,
+  .page *::before,
+  .page *::after,
+  .page *::details-content {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 1080px) {
+  .nav {
+    display: none;
+  }
+
+  .heroText .h1,
+  .heroAside,
+  .featureText,
+  .panel,
+  .featureReverse .featureText,
+  .featureReverse .panel,
+  .lookupGrid > :first-child,
+  .lookupGrid > :last-child,
+  .faqGrid > :first-child,
+  .faqList {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .heroShot {
+    margin-bottom: -96px;
+  }
+
+  .facts {
+    padding-top: 152px;
+  }
+
+  .feature {
+    padding-bottom: 96px;
+  }
+
+  .timeline {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 40px;
+  }
+
+  .stage:nth-child(2)::before {
+    right: auto;
+    width: 12px;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .headerInner {
+    gap: 12px;
+  }
+
+  .headerActions {
+    gap: 8px;
+  }
+
+  .headerActions .buttonSmall,
+  .brandText span {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 48px;
+  }
+
+  .heroShot {
+    margin: 40px 0 -48px;
+  }
+
+  .facts {
+    padding: 96px 0 64px;
+  }
+
+  .factGrid,
+  .timeline,
+  .footerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .stage::before {
+    display: none;
+  }
+
+  .stageMarker {
+    display: none;
+  }
+
+  .features {
+    padding-top: 80px;
+  }
+
+  .panel {
+    padding: 24px 0 0 24px;
+  }
+
+  .panelCentered {
+    padding: 24px;
+  }
+
+  .process,
+  .lookup,
+  .faq {
+    padding: 80px 0;
+  }
+
+  .searchRow {
+    flex-direction: column;
+  }
+}

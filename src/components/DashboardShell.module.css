@@ -1,0 +1,108 @@
+.shell {
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--sds-size-space-600);
+  flex-shrink: 0;
+  width: 248px;
+  height: 100vh;
+  padding: var(--sds-size-space-600) var(--sds-size-space-400);
+  border-right: var(--sds-size-stroke-border) solid var(--sds-color-border-default-default);
+  background: var(--sds-color-background-default-default);
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-600);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-100);
+}
+
+/* SDS Navigation Button (row, medium) inside a 4px-padded side item. */
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-size-space-200);
+  padding: var(--sds-size-space-200) var(--sds-size-space-300);
+  border-radius: var(--sds-size-radius-200);
+  color: var(--sds-color-text-default-secondary);
+}
+
+.navItem:hover {
+  background: var(--sds-color-background-default-secondary);
+  color: var(--sds-color-text-default-default);
+}
+
+.navItemActive,
+.navItemActive:hover {
+  background: var(--sds-color-background-neutral-tertiary);
+  color: var(--sds-color-text-default-default);
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-300);
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+}
+
+.userText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.logout {
+  align-self: flex-start;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--sds-size-space-600);
+  min-width: 0;
+  padding: 28px var(--sds-size-space-800) var(--sds-size-space-800);
+}
+
+@media (max-width: 900px) {
+  .shell {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    border-right: 0;
+    border-bottom: var(--sds-size-stroke-border) solid var(--sds-color-border-default-default);
+  }
+
+  .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .main {
+    padding: var(--sds-size-space-600) var(--sds-size-space-400);
+  }
+}

@@ -1,0 +1,10 @@
+.today {
+  flex-shrink: 0;
+  width: 400px;
+}
+
+@media (max-width: 1000px) {
+  .today {
+    width: 100%;
+  }
+}

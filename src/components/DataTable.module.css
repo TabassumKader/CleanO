@@ -1,0 +1,63 @@
+.wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: var(--sds-size-stroke-border) solid var(--sds-color-border-default-default);
+  border-radius: var(--sds-size-radius-200);
+  background: var(--sds-color-background-default-default);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.table th,
+.table td {
+  padding: var(--sds-size-space-300) var(--sds-size-space-200);
+  vertical-align: middle;
+  border-bottom: var(--sds-size-stroke-border) solid var(--sds-color-border-default-default);
+  overflow-wrap: anywhere;
+}
+
+.table th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: var(--sds-color-background-default-secondary);
+}
+
+.table th:first-child,
+.table td:first-child {
+  padding-left: var(--sds-size-space-400);
+}
+
+.table th:last-child,
+.table td:last-child {
+  padding-right: var(--sds-size-space-400);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.highlight td {
+  background: var(--sds-color-background-default-secondary);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover td {
+  background: var(--sds-color-background-default-secondary);
+}
+
+.clickable:focus-visible {
+  outline: 2px solid var(--sds-color-border-brand-default);
+  outline-offset: -2px;
+}

@@ -1,0 +1,132 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-size-space-400);
+  flex-wrap: wrap;
+}
+
+.headerText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--sds-size-space-100);
+  min-width: 260px;
+}
+
+.search {
+  width: 300px;
+  max-width: 100%;
+}
+
+.period {
+  width: 180px;
+}
+
+.reliability {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-size-space-200);
+}
+
+.bar {
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-300);
+  flex-shrink: 0;
+  width: 320px;
+}
+
+.actionCard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: var(--sds-size-space-300);
+  border: var(--sds-size-stroke-border) solid var(--sds-color-border-default-default);
+  border-radius: var(--sds-size-radius-200);
+  background: var(--sds-color-background-default-default);
+}
+
+.actionCard:hover {
+  border-color: var(--sds-color-border-default-secondary);
+}
+
+.reportBanner {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-size-space-400);
+  flex-wrap: wrap;
+}
+
+.reportBanner > svg {
+  flex-shrink: 0;
+}
+
+/* Text keeps a readable width and the button wraps below it on narrow screens. */
+.reportBanner > div {
+  flex: 1 1 280px;
+}
+
+/* S11 */
+.filters {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+  flex-wrap: wrap;
+}
+
+.filters > :first-child {
+  width: 360px;
+  max-width: 100%;
+}
+
+.filters > .filterSelect {
+  width: 172px;
+}
+
+.filters > .filterSelectType {
+  width: 190px;
+}
+
+.filters > .filterSelectWide {
+  width: 210px;
+}
+
+.detail {
+  position: sticky;
+  top: var(--sds-size-space-600);
+  flex-shrink: 0;
+  width: 380px;
+}
+
+.evidence {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sds-size-space-200);
+  height: 110px;
+  border-radius: var(--sds-size-radius-200);
+  background: var(--sds-color-background-default-secondary);
+}
+
+.pair {
+  display: flex;
+  gap: var(--sds-size-space-200);
+}
+
+.pair > * {
+  flex: 1;
+}
+
+@media (max-width: 1100px) {
+  .side,
+  .detail {
+    position: static;
+    width: 100%;
+  }
+}

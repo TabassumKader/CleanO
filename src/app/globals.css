@@ -1,0 +1,246 @@
+/* SDS (Simple Design System) tokens used by the CLEAN - O Figma file. */
+:root {
+  --sds-color-background-default-default: #ffffff;
+  --sds-color-background-default-secondary: #f5f5f5;
+  --sds-color-background-brand-default: #2c2c2c;
+  --sds-color-background-brand-tertiary: #f5f5f5;
+  --sds-color-background-neutral-tertiary: #e3e3e3;
+  --sds-color-background-positive-default: #14ae5c;
+  --sds-color-background-positive-secondary: #cff7d3;
+  --sds-color-background-positive-tertiary: #ebffee;
+  --sds-color-background-warning-default: #e8b931;
+  --sds-color-background-warning-secondary: #fff1c2;
+  --sds-color-background-warning-tertiary: #fffbeb;
+  --sds-color-background-danger-hover: #c00f0c;
+  --sds-color-background-danger-secondary: #fdd3d0;
+
+  --sds-color-border-default-default: #d9d9d9;
+  --sds-color-border-default-secondary: #757575;
+  --sds-color-border-brand-default: #2c2c2c;
+  --sds-color-border-neutral-default: #303030;
+  --sds-color-border-neutral-secondary: #767676;
+  --sds-color-border-neutral-tertiary: #b2b2b2;
+
+  --sds-color-text-default-default: #1e1e1e;
+  --sds-color-text-default-secondary: #757575;
+  --sds-color-text-default-tertiary: #b3b3b3;
+  --sds-color-text-brand-default: #2c2c2c;
+  --sds-color-text-brand-on-brand: #f5f5f5;
+  --sds-color-text-brand-on-brand-secondary: #1e1e1e;
+  --sds-color-text-neutral-default: #303030;
+  --sds-color-text-neutral-tertiary: #767676;
+  --sds-color-text-positive-on-positive-secondary: #02542d;
+  --sds-color-text-warning-default: #522504;
+  --sds-color-text-warning-on-warning-secondary: #682d03;
+  --sds-color-text-danger-on-danger-secondary: #900b09;
+
+  --sds-color-icon-default-default: #1e1e1e;
+  --sds-color-icon-default-secondary: #757575;
+  --sds-color-icon-brand-default: #2c2c2c;
+  --sds-color-icon-brand-on-brand: #f5f5f5;
+
+  --sds-size-space-100: 4px;
+  --sds-size-space-150: 6px;
+  --sds-size-space-200: 8px;
+  --sds-size-space-300: 12px;
+  --sds-size-space-400: 16px;
+  --sds-size-space-600: 24px;
+  --sds-size-space-800: 32px;
+  --sds-size-space-1200: 48px;
+  --sds-size-radius-100: 4px;
+  --sds-size-radius-200: 8px;
+  --sds-size-radius-full: 9999px;
+  --sds-size-stroke-border: 1px;
+  --sds-size-icon-medium: 32px;
+
+  --sds-typography-body-font-family: var(--font-inter), system-ui, sans-serif;
+  --sds-typography-heading-font-family: var(--font-inter), system-ui, sans-serif;
+  --sds-typography-subheading-font-family: var(--font-inter), system-ui, sans-serif;
+  --sds-typography-body-font-weight-regular: 400;
+  --sds-typography-body-font-weight-strong: 600;
+  --sds-typography-heading-font-weight: 600;
+  --sds-typography-subheading-font-weight: 400;
+  --sds-typography-body-size-small: 14px;
+  --sds-typography-body-size-medium: 16px;
+  --sds-typography-heading-size-base: 24px;
+  --sds-typography-subheading-size-medium: 20px;
+
+  --bangla-font-family: var(--font-bangla), var(--font-inter), sans-serif;
+
+  /* Page gutter: 120px on the 1440px design, narrower on small screens. */
+  --page-gutter: 120px;
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --page-gutter: 48px;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --page-gutter: 16px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--sds-typography-body-font-family);
+  font-size: var(--sds-typography-body-size-medium);
+  line-height: 1.4;
+  color: var(--sds-color-text-default-default);
+  background: var(--sds-color-background-default-secondary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--sds-color-border-brand-default);
+  outline-offset: 2px;
+}
+
+/* Text styles from the design file (SDS + local CLEAN - O styles). */
+.t-heading {
+  font-family: var(--sds-typography-heading-font-family);
+  font-size: var(--sds-typography-heading-size-base);
+  font-weight: var(--sds-typography-heading-font-weight);
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+}
+
+.t-subheading {
+  font-family: var(--sds-typography-subheading-font-family);
+  font-size: var(--sds-typography-subheading-size-medium);
+  font-weight: var(--sds-typography-subheading-font-weight);
+  line-height: 1.2;
+}
+
+.t-body {
+  font-size: var(--sds-typography-body-size-medium);
+  font-weight: var(--sds-typography-body-font-weight-regular);
+  line-height: 1.4;
+}
+
+.t-body-strong {
+  font-size: var(--sds-typography-body-size-medium);
+  font-weight: var(--sds-typography-body-font-weight-strong);
+  line-height: 1.4;
+}
+
+.t-small {
+  font-size: var(--sds-typography-body-size-small);
+  font-weight: var(--sds-typography-body-font-weight-regular);
+  line-height: 1.4;
+}
+
+.t-small-strong {
+  font-size: var(--sds-typography-body-size-small);
+  font-weight: var(--sds-typography-body-font-weight-strong);
+  line-height: 1.4;
+}
+
+.t-number {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.64px;
+}
+
+.t-caption {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.t-caption-strong {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.t-bangla-heading {
+  font-family: var(--bangla-font-family);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.t-bangla-body {
+  font-family: var(--bangla-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.t-bangla-small {
+  font-family: var(--bangla-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.t-bangla-strong {
+  font-family: var(--bangla-font-family);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.t-bangla-number {
+  font-family: var(--bangla-font-family);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* Any Bangla text falls back to Noto Sans Bengali, even inside SDS components. */
+:lang(bn) {
+  font-family: var(--bangla-font-family);
+}
+
+.c-secondary {
+  color: var(--sds-color-text-default-secondary);
+}
+
+@media print {
+  body > header,
+  .print-hide {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
